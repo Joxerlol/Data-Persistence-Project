@@ -28,11 +28,11 @@ public class MainManager : MonoBehaviour
 
     void Start()
     {
-        playerName = DataPersistenceManager.instance.playerName;
-
-        DataPersistenceManager.instance.LoadHighScore();
-
-        SetHighScore();
+        if (DataPersistenceManager.instance.hiScore != 0)
+        {
+            DataPersistenceManager.instance.LoadHighScore();
+            SetHighScore();
+        }              
         
 
         const float step = 0.6f;
